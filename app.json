@@ -1,27 +1,32 @@
 {
   "expo": {
-    "name": "react-native-boilerplate",
-    "slug": "react-native-boilerplate",
-    "privacy": "public",
-    "platforms": ["ios", "android", "web"],
+    "name": "cook-master",
+    "slug": "cook-master",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo-sm.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "svg", "ts", "tsx"]
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     }
   }
 }
