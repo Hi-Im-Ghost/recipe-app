@@ -52,24 +52,6 @@ const trendingRecipes = [
                 quantity: "¼ tbsp"
             },
 
-        ],
-        viewers: [
-            {
-                id: 1,
-                profilePic: images.UserProfile1
-            },
-            {
-                id: 2,
-                profilePic: images.UserProfile2
-            },
-            {
-                id: 3,
-                profilePic: images.UserProfile3
-            },
-            {
-                id: 4,
-                profilePic: images.UserProfile3
-            }
         ]
     },
     {
@@ -116,28 +98,6 @@ const trendingRecipes = [
                 quantity: "1 tsp"
             },
 
-        ],
-        viewers: [
-            {
-                id: 1,
-                profilePic: images.UserProfile5
-            },
-            {
-                id: 2,
-                profilePic: images.UserProfile4
-            },
-            {
-                id: 3,
-                profilePic: images.UserProfile1
-            },
-            {
-                id: 4,
-                profilePic: images.UserProfile2
-            },
-            {
-                id: 5,
-                profilePic: images.UserProfile3
-            }
         ]
     },
     {
@@ -191,23 +151,6 @@ const trendingRecipes = [
             },
 
 
-        ],
-        viewers: [
-            {
-                id: 1,
-                name: "User 1",
-                profilePic: images.UserProfile1
-            },
-            {
-                id: 2,
-                name: "User 2",
-                profilePic: images.UserProfile2
-            },
-            {
-                id: 3,
-                name: "User 3",
-                profilePic: images.UserProfile3
-            }
         ]
     },
     {
@@ -254,9 +197,6 @@ const trendingRecipes = [
                 quantity: "3 cups"
             },
 
-
-        ],
-        viewers: [
 
         ]
     },

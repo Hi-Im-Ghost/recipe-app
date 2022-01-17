@@ -5,6 +5,7 @@ const search = require("../assets/icons/search.png")
 const settings = require("../assets/icons/settings.png")
 const back = require("../assets/icons/back.png")
 const rightArrow = require("../assets/icons/right-arrow.png")
+const authors = require("../assets/icons/authors.png")
 
 const anchovy = require("../assets/icons/anchovy.png")
 const cheese = require("../assets/icons/cheese.png")
@@ -34,6 +35,7 @@ export default {
     search,
     settings,
     rightArrow,
+    authors,
 
     anchovy,
     coriander,
