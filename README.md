@@ -1,2 +1,0 @@
-# recipe-app
- Aplikacja przepisowa

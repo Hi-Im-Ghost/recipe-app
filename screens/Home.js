@@ -81,6 +81,7 @@ const Home = ({ navigation }) => {
                     placeholderTextColor={COLORS.gray}
                     placeholder="Search Recipes"
                 />
+
             </View>
         )
     }

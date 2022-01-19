@@ -10,10 +10,7 @@ const trendingRecipes = [
         serving: 1,
         isBookmark: false,
         category: "Pasta",
-        author: {
-            profilePic: images.UserProfile5,
-            name: "Maria",
-        },
+        author: "Maria",
         ingredients: [
             {
                 id: 1,
@@ -62,10 +59,7 @@ const trendingRecipes = [
         serving: 10,
         isBookmark: true,
         category: "Local",
-        author: {
-            profilePic: images.UserProfile8,
-            name: "Mandy",
-        },
+        author: "Mandy",
         ingredients: [
             {
                 id: 1,
@@ -108,10 +102,7 @@ const trendingRecipes = [
         serving: 1,
         isBookmark: true,
         category: "Local",
-        author: {
-            profilePic: images.UserProfile9,
-            name: "Jessie",
-        },
+        author: "Jessie",
         ingredients: [
             {
                 id: 1,
@@ -161,10 +152,7 @@ const trendingRecipes = [
         serving: 10,
         isBookmark: true,
         category: "Local",
-        author: {
-            profilePic: images.UserProfile7,
-            name: "Ali Baba",
-        },
+        author: "Ali Baba",
         ingredients: [
             {
                 id: 1,
