@@ -18,7 +18,7 @@ function Texts(navigation){
 function MyDrawer(){
     return(
         <DrawerNavigator>
-            <Drawer.Screen name="Home" component={Tabs}/>
+            <Drawer.Screen name="Home" component={Texts}/>
         </DrawerNavigator>
     );
 }
