@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import {Home} from "../screens"
 import {TabIcon} from "../components";
 import {COLORS, icons} from "../constants";
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator()
 
@@ -50,7 +51,7 @@ const Tabs = () => {
             />
             <Tab.Screen
                 name="Authors"
-                component={Home}
+                component={Profile}
                 options={{
                     tabBarIcon:({focused}) => <TabIcon focused={focused} icon={icons.authors} />
                 }}

@@ -8,7 +8,7 @@ import StackNav from "./navigation/stackNav";
 const App = () => {
   return (
       <NavigationContainer>
-          <DrawerNav/>
+          <StackNav/>
       </NavigationContainer>
   )
 }
