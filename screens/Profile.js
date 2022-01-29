@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     View,
     Text,
@@ -9,8 +9,41 @@ import {
 
 import {FONTS, COLORS, SIZES, icons, images, dummyData} from "../constants";
 import {CategoryCard, TrendingCard} from "../components";
+import ImagePicker from 'react-native-image-crop-picker';
 
 const Profile = ({ navigation }) => {
+
+    useEffect(() => {
+        setImage(image);
+    }, [image]);
+
+    const [image, setImage] = useState(image);
+
+    const takePhotoFromCamera = () => {
+
+        ImagePicker.openCamera({
+            compressImageMaxWidth: 300,
+            compressImageMaxHeight: 300,
+            cropping: true,
+            compressImageQuality: 0.7
+        }).then(image => {
+            console.log(image);
+            setImage(image.path);
+        });
+    }
+
+    const choosePhotoFromLibrary = () => {
+        ImagePicker.openPicker({
+            width: 300,
+            height: 300,
+            cropping: true,
+            compressImageQuality: 0.7
+        }).then(image => {
+            console.log(image);
+            setImage(image.path);
+        });
+    }
+
 
     function renderHeader(){
         return(
@@ -47,7 +80,6 @@ const Profile = ({ navigation }) => {
                         this is your profile
                     </Text>
                 </View>
-                {/*Image*/}
 
             </View>
         )
@@ -150,6 +182,7 @@ const Profile = ({ navigation }) => {
         )
     }
 
+
     function renderPhoto() {
         return(
             <View
@@ -163,8 +196,89 @@ const Profile = ({ navigation }) => {
                         ...FONTS.h2
                     }}
                 >
-                    Your photos of the dishes
+                    Your last photo of the dish
                 </Text>
+                <View style={{
+                    padding: 20,
+                    backgroundColor: '#FFFFFF',
+                    paddingTop: 20,
+                }}>
+                    <View
+                        style={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                        {/*Image*/}
+                        <Image
+                            source={{
+                                uri:image,
+                            }}
+                            style={{
+                                flex: 1,
+                                width: 400,
+                                height: 200,
+                                resizeMode: 'contain'
+                            }}>
+                        </Image>
+                    </View>
+
+                    <View
+                        style={{
+                            alignItems: 'center',
+                            marginTop:SIZES.padding
+                        }}>
+                        <Text style={{
+                            marginHorizontal: SIZES.padding,
+                            ...FONTS.h2
+                        }}>
+                            Upload Photo
+                        </Text>
+                        <Text style={{
+                            marginTop:3,
+                            color: COLORS.gray,
+                            ...FONTS.body3
+                        }}>
+                            Choose or take a picture of your dish
+                        </Text>
+                    </View>
+                    <TouchableOpacity style={{
+                        padding: 5,
+                        borderRadius: 10,
+                        backgroundColor: COLORS.lime,
+                        alignItems: 'center',
+                        marginVertical: 10,
+                    }} onPress={takePhotoFromCamera}>
+                        <Text style={{
+                            padding: 10,
+                            backgroundColor: COLORS.lime,
+                            alignItems: 'center',
+                            marginVertical: 5,
+                            ...FONTS.body2,
+                            color: COLORS.black
+                        }}>
+                            Take Photo
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{
+                        padding: 5,
+                        borderRadius: 10,
+                        backgroundColor: COLORS.lime,
+                        alignItems: 'center',
+                        marginVertical: 10,
+                    }} onPress={choosePhotoFromLibrary}
+                    >
+                        <Text style={{
+                            padding: 10,
+                            backgroundColor: COLORS.lime,
+                            alignItems: 'center',
+                            marginVertical: 5,
+                            ...FONTS.body2,
+                            color: COLORS.black
+                        }}>
+                            Choose From Library
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         )
     }
@@ -195,6 +309,7 @@ const Profile = ({ navigation }) => {
                         style={{
                             marginBottom:100
                         }}
+
                     />
                 }
             />
