@@ -1,13 +1,14 @@
 import React from "react";
-import {
-    View,
-} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 import {Home} from "../screens"
 import {TabIcon} from "../components";
 import {COLORS, icons} from "../constants";
+<<<<<<< Updated upstream
 
+=======
+import Profile from "../screens/Profile";
+>>>>>>> Stashed changes
 const Tab = createBottomTabNavigator()
 
 const Tabs = () => {
@@ -32,7 +33,8 @@ const Tabs = () => {
                 component={Home}
                 options={{
                     tabBarIcon:({focused}) => <TabIcon focused={focused} icon={icons.home} />
-                }}
+
+            }}
             />
             <Tab.Screen
                 name="Search"
@@ -49,8 +51,13 @@ const Tabs = () => {
                 }}
             />
             <Tab.Screen
+<<<<<<< Updated upstream
                 name="Authors"
                 component={Home}
+=======
+                name="Profile"
+                component={Profile}
+>>>>>>> Stashed changes
                 options={{
                     tabBarIcon:({focused}) => <TabIcon focused={focused} icon={icons.authors} />
                 }}
