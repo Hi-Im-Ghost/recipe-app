@@ -1,5 +1,6 @@
 const loginBackground = require("../assets/images/system/login.png")
 
+const master = require("../assets/images/dummy_profiles/master.png")
 const recipe = require("../assets/images/recipes/recipe.png")
 const spagetti = require("../assets/images/recipes/spagetti.png")
 const satay = require("../assets/images/recipes/satay.png")
@@ -13,5 +14,6 @@ export default {
     satay,
     laksa,
     nasiLemak,
+    master,
 
 }

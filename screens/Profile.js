@@ -7,8 +7,6 @@ import {
     FlatList, SafeAreaView, Image
 } from 'react-native';
 
-import { Ionicons } from "@expo/vector-icons"
-import {Button, Box, Center, NativeBaseProvider, Icon} from "native-base";
 import {FONTS, COLORS, SIZES, icons, images, dummyData} from "../constants";
 import {CategoryCard, TrendingCard} from "../components";
 import ImagePicker from 'react-native-image-crop-picker';
@@ -187,7 +185,6 @@ const Profile = ({ navigation }) => {
 
     function renderPhoto() {
         return(
-            <NativeBaseProvider>
             <View
                 style={{
                     marginTop:SIZES.padding,
@@ -236,24 +233,53 @@ const Profile = ({ navigation }) => {
                         }}>
                             Upload Photo
                         </Text>
-                        <Text mt="3"  style={{
+                        <Text style={{
+                            marginTop:3,
                             color: COLORS.gray,
                             ...FONTS.body3
                         }}>
                             Choose or take a picture of your dish
                         </Text>
                     </View>
-
-                    <Box alignItems="center">
-                        <Button py="5" px="20" m="5" bg="#2AD699" leftIcon={<Icon as={Ionicons} name="camera" size="sm" />} onPress={takePhotoFromCamera}>Take photo</Button>
-                    </Box>
-                        <Box alignItems="center">
-                            <Button py="5" px="20" mb="5" bg="#2AD699" leftIcon={<Icon as={Ionicons} name="folder" size="sm" />} onPress={choosePhotoFromLibrary}>Choose From Library</Button>
-                        </Box>
-
+                    <TouchableOpacity style={{
+                        padding: 5,
+                        borderRadius: 10,
+                        backgroundColor: COLORS.lime,
+                        alignItems: 'center',
+                        marginVertical: 10,
+                    }} onPress={takePhotoFromCamera}>
+                        <Text style={{
+                            padding: 10,
+                            backgroundColor: COLORS.lime,
+                            alignItems: 'center',
+                            marginVertical: 5,
+                            ...FONTS.body2,
+                            color: COLORS.black
+                        }}>
+                            Take Photo
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{
+                        padding: 5,
+                        borderRadius: 10,
+                        backgroundColor: COLORS.lime,
+                        alignItems: 'center',
+                        marginVertical: 10,
+                    }} onPress={choosePhotoFromLibrary}
+                    >
+                        <Text style={{
+                            padding: 10,
+                            backgroundColor: COLORS.lime,
+                            alignItems: 'center',
+                            marginVertical: 5,
+                            ...FONTS.body2,
+                            color: COLORS.black
+                        }}>
+                            Choose From Library
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
-            </NativeBaseProvider>
         )
     }
 
