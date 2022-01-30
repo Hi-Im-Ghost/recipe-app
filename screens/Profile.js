@@ -7,6 +7,8 @@ import {
     FlatList, SafeAreaView, Image
 } from 'react-native';
 
+import { Ionicons } from "@expo/vector-icons"
+import {Button, Box, Center, NativeBaseProvider, Icon} from "native-base";
 import {FONTS, COLORS, SIZES, icons, images, dummyData} from "../constants";
 import {CategoryCard, TrendingCard} from "../components";
 import ImagePicker from 'react-native-image-crop-picker';
@@ -25,7 +27,7 @@ const Profile = ({ navigation }) => {
             compressImageMaxWidth: 300,
             compressImageMaxHeight: 300,
             cropping: true,
-            compressImageQuality: 0.7
+            compressImageQuality: 0.9
         }).then(image => {
             console.log(image);
             setImage(image.path);
@@ -185,101 +187,73 @@ const Profile = ({ navigation }) => {
 
     function renderPhoto() {
         return(
-            <View
-                style={{
-                    marginTop:SIZES.padding,
-                }}
-            >
-                <Text
+            <NativeBaseProvider>
+                <View
                     style={{
-                        marginHorizontal: SIZES.padding,
-                        ...FONTS.h2
+                        marginTop:SIZES.padding,
                     }}
                 >
-                    Your last photo of the dish
-                </Text>
-                <View style={{
-                    padding: 20,
-                    backgroundColor: '#FFFFFF',
-                    paddingTop: 20,
-                }}>
-                    <View
+                    <Text
                         style={{
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}>
-                        {/*Image*/}
-                        <Image
-                            source={{
-                                uri:image,
-                            }}
-                            style={{
-                                flex: 1,
-                                width: 400,
-                                height: 200,
-                                resizeMode: 'contain'
-                            }}>
-                        </Image>
-                    </View>
-
-                    <View
-                        style={{
-                            alignItems: 'center',
-                            marginTop:SIZES.padding
-                        }}>
-                        <Text style={{
                             marginHorizontal: SIZES.padding,
                             ...FONTS.h2
-                        }}>
-                            Upload Photo
-                        </Text>
-                        <Text style={{
-                            marginTop:3,
-                            color: COLORS.gray,
-                            ...FONTS.body3
-                        }}>
-                            Choose or take a picture of your dish
-                        </Text>
-                    </View>
-                    <TouchableOpacity style={{
-                        padding: 5,
-                        borderRadius: 10,
-                        backgroundColor: COLORS.lime,
-                        alignItems: 'center',
-                        marginVertical: 10,
-                    }} onPress={takePhotoFromCamera}>
-                        <Text style={{
-                            padding: 10,
-                            backgroundColor: COLORS.lime,
-                            alignItems: 'center',
-                            marginVertical: 5,
-                            ...FONTS.body2,
-                            color: COLORS.black
-                        }}>
-                            Take Photo
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={{
-                        padding: 5,
-                        borderRadius: 10,
-                        backgroundColor: COLORS.lime,
-                        alignItems: 'center',
-                        marginVertical: 10,
-                    }} onPress={choosePhotoFromLibrary}
+                        }}
                     >
-                        <Text style={{
-                            padding: 10,
-                            backgroundColor: COLORS.lime,
-                            alignItems: 'center',
-                            marginVertical: 5,
-                            ...FONTS.body2,
-                            color: COLORS.black
-                        }}>
-                            Choose From Library
-                        </Text>
-                    </TouchableOpacity>
+                        Your last photo of the dish
+                    </Text>
+                    <View style={{
+                        padding: 20,
+                        backgroundColor: '#FFFFFF',
+                        paddingTop: 20,
+                    }}>
+                        <View
+                            style={{
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                            {/*Image*/}
+                            <Image
+                                source={{
+                                    uri:image,
+                                }}
+                                style={{
+                                    flex: 1,
+                                    width: 400,
+                                    height: 200,
+                                    resizeMode: 'contain'
+                                }}>
+                            </Image>
+                        </View>
+
+                        <View
+                            style={{
+                                alignItems: 'center',
+                                marginTop:SIZES.padding
+                            }}>
+                            <Text style={{
+                                marginHorizontal: SIZES.padding,
+                                ...FONTS.h2
+                            }}>
+                                Upload Photo
+                            </Text>
+                            <Text mt="3"  style={{
+                                color: COLORS.gray,
+                                ...FONTS.body3
+                            }}>
+                                Choose or take a picture of your dish
+                            </Text>
+                        </View>
+
+                        <Box alignItems="center">
+                            <Button py="5" px="20" m="5" bg="#2AD699" leftIcon={<Icon as={Ionicons} name="camera" size="sm" />} onPress={takePhotoFromCamera}>Take photo</Button>
+                        </Box>
+                        <Box alignItems="center">
+                            <Button py="5" px="20" mb="5" bg="#2AD699" leftIcon={<Icon as={Ionicons} name="folder" size="sm" />} onPress={choosePhotoFromLibrary}>Choose From Library</Button>
+                        </Box>
+
+                    </View>
                 </View>
-            </View>
+            </NativeBaseProvider>
         )
     }
 
