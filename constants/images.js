@@ -6,6 +6,8 @@ const spagetti = require("../assets/images/recipes/spagetti.png")
 const satay = require("../assets/images/recipes/satay.png")
 const laksa = require("../assets/images/recipes/laksa.png")
 const nasiLemak = require("../assets/images/recipes/nasi-lemak.webp")
+const roast_chicken = require("../assets/images/recipes/chicken.jpg")
+const sweet_potatoes = require("../assets/images/recipes/sweet_potatoes.jpg")
 
 export default {
     loginBackground,
@@ -15,5 +17,6 @@ export default {
     laksa,
     nasiLemak,
     master,
-
+    roast_chicken,
+    sweet_potatoes,
 }

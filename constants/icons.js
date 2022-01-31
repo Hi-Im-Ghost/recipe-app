@@ -26,6 +26,13 @@ const salt = require("../assets/icons/salt.png")
 const sugar = require("../assets/icons/sugar.png")
 const shrimp = require("../assets/icons/shrimp.png")
 const tomato = require("../assets/icons/tomato.png")
+const butter = require("../assets/icons/butter.png")
+const lemon = require("../assets/icons/lemon.png")
+const ginger = require("../assets/icons/ginger.png")
+const gravy = require("../assets/icons/gravy.png")
+const tarragon = require("../assets/icons/tarragon.png")
+const cilantro = require("../assets/icons/cilantro.png")
+const lime_juice = require("../assets/icons/lime-juice.png")
 
 export default {
     bookmark,
@@ -56,4 +63,11 @@ export default {
     pepper,
     salt,
     sugar,
+    butter,
+    lemon,
+    ginger,
+    gravy,
+    tarragon,
+    cilantro,
+    lime_juice,
 }

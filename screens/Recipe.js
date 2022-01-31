@@ -5,7 +5,7 @@ import {
     Image,
     TouchableOpacity,
     Animated,
-    Platform
+    Platform, SafeAreaView, FlatList
 } from 'react-native';
 
 import { BlurView } from 'expo-blur';
@@ -172,7 +172,7 @@ const Recipe = ({navigation, route}) => {
             <View
                 style={{
                     flexDirection: 'row',
-                    height: 130,
+                    height: 80,
                     width: SIZES.width,
                     paddingHorizontal: 30,
                     paddingVertical: 20,
@@ -195,11 +195,50 @@ const Recipe = ({navigation, route}) => {
                             ...FONTS.body4
                         }}
                     >
-                        {selectedRecipe?.duration}|
+                        {selectedRecipe?.duration} |
                         {selectedRecipe?.serving} Serving
                     </Text>
                 </View>
             </View>
+        )
+    }
+
+    function renderMethod() {
+        return(
+
+            <SafeAreaView
+                style={{
+                    flex: 1,
+                    backgroundColor:COLORS.white
+                }}
+            >
+                <View
+                    style={{
+                        paddingHorizontal: 20,
+                        paddingVertical: 25,
+                        width: SIZES.width,
+                        alignItems: 'center'
+                    }}
+                >
+                    <Text
+                        style={{
+                            color: COLORS.black,
+                            ...FONTS.body1,
+                            marginBottom: 15,
+                            fontWeight: 'bold',
+                        }}>
+                        How to prepare:
+                    </Text>
+                    <Text
+                        style={{
+                            color: COLORS.black,
+                            ...FONTS.body3
+                        }}
+                    >
+                        {selectedRecipe?.method}
+                    </Text>
+                </View>
+            </SafeAreaView>
         )
     }
 
@@ -222,6 +261,12 @@ const Recipe = ({navigation, route}) => {
 
                         {/*Ingredient Title*/}
 
+                    </View>
+                }
+                ListFooterComponent={
+                    <View>
+                        {/*Method Recipe*/}
+                        {renderMethod()}
                     </View>
                 }
                 scrollEventThrottle={16}
@@ -288,6 +333,7 @@ const Recipe = ({navigation, route}) => {
                     </View>
                 )}
             />
+
 
             {/*Header Bar*/}
             {renderHeaderBar()}
